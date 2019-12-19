@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Student Information ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>populateData</h2>
+
+@model System.Data.DataTable
+    @using System.Data
+
+<div>
+   @if (Model!=null) {
+    <table>
+        <thead>
+
+            <tr>
+                @foreach (DataColumn col in Model.Columns)
+                {
+                    <th>
+
+                        @col.Caption
+                    </th>
+
+                }
+
+            </tr>
+
+
+        </thead>
+        <tbody>
+
+            @foreach ( DataRow row in Model.Rows)
+            {
+            <tr>
+
+@foreach (var cell in row.ItemArray)
+{
+
+    if (cell != null)
+    {
+<td>@cell.ToString()</td>
+    }
+    else {
+
+<td>
+
+
+</td>
+    }
+
+}
+
+            </tr>
+
+        }
+
+
+            </tbody>
+
+
+        </table>
+
+   }
+</div>

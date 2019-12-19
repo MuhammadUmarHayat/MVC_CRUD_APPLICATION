@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+@using MVC_CRUD_Application.Models;
+@model  StudentData
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewStudents</title>
+</head>
+<body>
+    <div>
+        <h1>Student Information </h1>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class</th>
+            </tr>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.rollno</td>
+                    <td>@student.mname</td>
+                    <td>@student.sname</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</body>
+</html>
